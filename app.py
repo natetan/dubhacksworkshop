@@ -15,14 +15,15 @@ def yoda():
 	# These code snippets use an open-source library. http://unirest.io/python
 	sentence = request.args.get("text")
 
-	response = unirest.get("https://yoda.p.mashape.com/yoda?sentence=" + sentence,
-	  	headers={
-	    	"X-Mashape-Key": 
-	    	"TOKPt5V7Whmsh6TeuEKGV5v9nQo7p1m7NfTjsn9PhM41rDqUaM",
-	    	"Accept": "text/plain"
-	 	}
-	)
-	return response.body
+	# response = unirest.get("https://yoda.p.mashape.com/yoda?sentence=" + sentence,
+	#   	headers={
+	#     	"X-Mashape-Key": 
+	#     	"TOKPt5V7Whmsh6TeuEKGV5v9nQo7p1m7NfTjsn9PhM41rDqUaM",
+	#     	"Accept": "text/plain"
+	#  	}
+	# )
+	# return response.body
+	return sentence[::-1]
 
 @app.route('/about')
 def about():
